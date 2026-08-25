@@ -3,10 +3,72 @@ package com.codewithmosh.store;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//class Student {
+//    int rollno;
+//    String name;
+//    int marks;
+//}
+
+class Mobile {
+    String brand;
+    String network;
+    int price;
+    static String name;
+
+    static {
+        name = "Phone";
+        System.out.println("Inside the static block");
+    }
+
+    public Mobile(){
+        brand = "";
+        price = 200;
+        System.out.println("Inside the constructor");
+    }
+
+    void show(){
+        System.out.println(brand + " : " + price + " :" + name);
+    }
+}
+
 @SpringBootApplication
 public class StoreApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(StoreApplication.class, args);
+    public static void main(String[] args) throws ClassNotFoundException {
+//        SpringApplication.run(StoreApplication.class, args);
+//        int nums [][] = new int[3][4];
+
+//.
+    // working with string.
+//    String name = new String("Adeyemi");
+//        String name = "Adeyemi";
+//        System.out.println(name);
+////        System.out.println(name.hashCode());
+//        System.out.println("char at: " + name.charAt(2));
+//        System.out.println(name.concat(" Adeola"));
+        // String pool constants.
+//        mutable strings
+//        immutable strings - String buffer, String builder.
+
+//        StringBuffer sb = new StringBuffer();
+//        System.out.println(sb.capacity());
+
+
+//        Mobile obj1 = new Mobile();
+//        obj1.brand = "Apple";
+//        obj1.price = 1500;
+//
+//        Mobile obj2 = new Mobile();
+//        obj2.brand = "Samsung";
+//        obj2.price = 1700;
+//
+//        Mobile.name = "SmartPhone";
+//
+//        obj1.show();
+//        obj2.show();
+
+        //using class to load a class
+        Class.forName("Mobile");
+
     }
 }

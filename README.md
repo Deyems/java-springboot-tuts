@@ -1,19 +1,24 @@
 # The Ultimate Spring Boot Course
 
-This repository contains the starter project for Part 2 of my Spring Boot course:
+This repository contains my follow up on learning Spring Boot & Java course:
 
-[https://codewithmosh.com/p/spring-boot-building-apis](https://codewithmosh.com/p/spring-boot-building-apis)
+Navin Raddy
+[Java tutorials from NAVIN RADDY](https://www.youtube.com/watch?v=BGTx91t8q50&t=15124s)
+
+CodeWithMosh
+[Spring boot tutorials Creating Ecommerce API](https://www.youtube.com/watch?v=EWd3_I4X32g&t=433sCodeWithMosh)
+
 
 ## About this Repository 
 
-This project is based on the final project from Part 1 of the course, but I’ve cleaned it up and removed unnecessary playground code so we can focus on building APIs in Part 2.
+This project is based on the two tutors Navin Raddy Java Tutorial and CodeWithMost Spring boot tutorial, but I’ve cleaned it up and removed unnecessary playground.
 
-You’ll be cloning this repository and coding along with me as we extend the project.
+You can clone this repository and code along based on the commits as we extend the project.
 
 To get started, clone the repository to your local machine:
 
 ```sh
-git clone https://github.com/mosh-hamedani/spring-api-starter
+git clone  https://github.com/Deyems/java-springboot-tuts.git
 
 cd spring-api
 ```
