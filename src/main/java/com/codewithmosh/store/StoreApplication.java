@@ -36,6 +36,11 @@ class Mobile {
     }
 }
 
+class Human {
+    private int age;
+    private String name;
+}
+
 @SpringBootApplication
 public class StoreApplication {
 
@@ -59,21 +64,25 @@ public class StoreApplication {
 //        System.out.println(sb.capacity());
 
 
-        Mobile obj1 = new Mobile();
-        obj1.brand = "Apple";
-        obj1.price = 1500;
-
-        Mobile obj2 = new Mobile();
-        obj2.brand = "Samsung";
-        obj2.price = 1700;
-
-        Mobile.name = "SmartPhone";
-
-        obj1.show();
-        obj2.show();
+//        Mobile obj1 = new Mobile();
+//        obj1.brand = "Apple";
+//        obj1.price = 1500;
+//
+//        Mobile obj2 = new Mobile();
+//        obj2.brand = "Samsung";
+//        obj2.price = 1700;
+//
+//        Mobile.name = "SmartPhone";
+//
+//        obj1.show();
+//        obj2.show();
 
         //using class to load a class
 //        Class.forName("com.codewithmosh.store.Mobile");
+        Human humanObj = new Human();
+        humanObj.age = 16;
+        humanObj.name = "Navin";
+        System.out.println("The age of human is: " + humanObj.age);
 
     }
 }
