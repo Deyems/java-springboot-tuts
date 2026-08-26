@@ -37,8 +37,16 @@ class Mobile {
 }
 
 class Human {
-    private int age;
-    private String name;
+    private int age = 11;
+    private String name = "Adesola";
+
+    public int getAge(){
+        return age;
+    }
+
+    public String getName(){
+        return name;
+    }
 }
 
 @SpringBootApplication
@@ -80,9 +88,9 @@ public class StoreApplication {
         //using class to load a class
 //        Class.forName("com.codewithmosh.store.Mobile");
         Human humanObj = new Human();
-        humanObj.age = 16;
-        humanObj.name = "Navin";
-        System.out.println("The age of human is: " + humanObj.age);
+//        humanObj.age = 16;
+//        humanObj.name = "Navin";
+        System.out.println("The age of human is: " + humanObj.getAge());
 
     }
 }
