@@ -44,8 +44,16 @@ class Human {
         return age;
     }
 
+    public void setAge(int age){
+        age = age;
+    }
+
     public String getName(){
         return name;
+    }
+
+    public void setName(String n){
+        name = n;
     }
 }
 
@@ -88,9 +96,9 @@ public class StoreApplication {
         //using class to load a class
 //        Class.forName("com.codewithmosh.store.Mobile");
         Human humanObj = new Human();
-//        humanObj.age = 16;
-//        humanObj.name = "Navin";
-        System.out.println("The age of human is: " + humanObj.getAge());
+        humanObj.setAge(23);
+        humanObj.setName("Mavin Beacon");
+        System.out.println(humanObj.getName() + " " + "Your age is: " + humanObj.getAge());
 
     }
 }
