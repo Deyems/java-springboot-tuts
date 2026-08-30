@@ -37,7 +37,7 @@ class Mobile {
 }
 
 class Human {
-    private int age = 11;
+    private int age;
     private String name = "Adesola";
 
     public int getAge(){
@@ -45,7 +45,8 @@ class Human {
     }
 
     public void setAge(int age){
-        age = age;
+        Human obj1 = new Human();
+        obj1.age = age;
     }
 
     public String getName(){
