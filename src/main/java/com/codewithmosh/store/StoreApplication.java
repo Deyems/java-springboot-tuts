@@ -40,21 +40,28 @@ class Human {
     private int age;
     private String name = "Adesola";
 
+    public Human(){
+        age = 12;
+        name = "Default";
+        System.out.println("values in the human constructor!");
+    }
+
     public int getAge(){
         return age;
     }
 
     public void setAge(int age){
-        Human obj1 = new Human();
-        obj1.age = age;
+//        Human obj1 = new Human();
+//        Human obj1 = obj;
+        this.age = age;
     }
 
     public String getName(){
         return name;
     }
 
-    public void setName(String n){
-        name = n;
+    public void setName(String name){
+        this.name = name;
     }
 }
 
@@ -62,40 +69,10 @@ class Human {
 public class StoreApplication {
 
     public static void main(String[] args) throws ClassNotFoundException {
-//        SpringApplication.run(StoreApplication.class, args);
-//        int nums [][] = new int[3][4];
-
-//.
-    // working with string.
-//    String name = new String("Adeyemi");
-//        String name = "Adeyemi";
-//        System.out.println(name);
-////        System.out.println(name.hashCode());
-//        System.out.println("char at: " + name.charAt(2));
-//        System.out.println(name.concat(" Adeola"));
-        // String pool constants.
-//        mutable strings
-//        immutable strings - String buffer, String builder.
-
-//        StringBuffer sb = new StringBuffer();
-//        System.out.println(sb.capacity());
-
-
-//        Mobile obj1 = new Mobile();
-//        obj1.brand = "Apple";
-//        obj1.price = 1500;
-//
-//        Mobile obj2 = new Mobile();
-//        obj2.brand = "Samsung";
-//        obj2.price = 1700;
-//
-//        Mobile.name = "SmartPhone";
-//
-//        obj1.show();
-//        obj2.show();
-
-        //using class to load a class
-//        Class.forName("com.codewithmosh.store.Mobile");
+    // SpringApplication.run(StoreApplication.class, args);
+    // int nums [][] = new int[3][4];
+    // using class to load a class
+    // Class.forName("com.codewithmosh.store.Mobile");
         Human humanObj = new Human();
         humanObj.setAge(23);
         humanObj.setName("Mavin Beacon");
