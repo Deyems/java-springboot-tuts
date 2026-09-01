@@ -40,10 +40,17 @@ class Human {
     private int age;
     private String name = "Adesola";
 
+    // Normal constructor
     public Human(){
         age = 12;
         name = "Default";
         System.out.println("values in the human constructor!");
+    }
+
+    // Parameterized constructor
+    public Human(int a, String n){
+        age = a;
+        name = n;
     }
 
     public int getAge(){
@@ -74,9 +81,12 @@ public class StoreApplication {
     // using class to load a class
     // Class.forName("com.codewithmosh.store.Mobile");
         Human humanObj = new Human();
-        humanObj.setAge(23);
-        humanObj.setName("Mavin Beacon");
+//        humanObj.setAge(23);
+//        humanObj.setName("Mavin Beacon");
+        Human humanObj_2 = new Human(18, "Navin");
         System.out.println(humanObj.getName() + " " + "Your age is: " + humanObj.getAge());
+        System.out.println("Normal Constructor vs Parameterized Constructor ");
+        System.out.println(humanObj_2.getName() + " " + "Your age is: " + humanObj_2.getAge());
 
     }
 }
