@@ -74,15 +74,25 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //use of extends and super.
 //inheritance
-class A {
+class A extends Object {
     public A(){
+        super();
         System.out.println("In Class A");
+    }
+    public A(int n){
+        super();
+        System.out.println("In A constructor with parameter" + n);
     }
 }
 
 class B extends A {
     public B(){
+        super(3);
         System.out.println("In Class B");
+    }
+    public B(int n){
+        super(n);
+        System.out.println("In B constructor with parameter");
     }
 }
 
@@ -102,6 +112,9 @@ public class StoreApplication {
 //        System.out.println("Normal Constructor vs Parameterized Constructor ");
 //        System.out.println(humanObj_2.getName() + " " + "Your age is: " + humanObj_2.getAge());
 
+        // Calling class with constructor parameterized.
+        // B obj = new B(4);
+        // Calling class without parameter in constructor.
         B obj = new B();
 
     }
