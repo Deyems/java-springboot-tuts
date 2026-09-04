@@ -125,6 +125,7 @@ public class StoreApplication {
 //        A obj = new A();
 //        obj.show();
         // anonymous object. -- objects are created in the heap memory.
-        new A();
+        new A().show();
+        new A().show();
     }
 }
