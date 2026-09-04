@@ -74,30 +74,39 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //use of extends and super.
 //inheritance
+//class A {
+//    public A(){
+//        System.out.println("In Class A");
+//    }
+//    public A(int n){
+//        System.out.println("In A constructor with parameter" + n);
+//    }
+//}
+
+//class B extends A {
+//    public B(){
+//        System.out.println("In Class B");
+//    }
+//    public B(int n){
+//        //this calls the default constructor of B class
+//        this();
+//        System.out.println("In B constructor with parameter");
+//    }
+//}
+
 class A {
     public A(){
-        System.out.println("In Class A");
+        System.out.println("In A Constructor");
     }
-    public A(int n){
-        System.out.println("In A constructor with parameter" + n);
-    }
-}
-
-class B extends A {
-    public B(){
-        System.out.println("In Class B");
-    }
-    public B(int n){
-        //this calls the default constructor of B class
-        this();
-        System.out.println("In B constructor with parameter");
+    public void show(){
+        System.out.println("In A show method.");
     }
 }
 
 @SpringBootApplication
 public class StoreApplication {
 
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) {
     // SpringApplication.run(StoreApplication.class, args);
     // int nums [][] = new int[3][4];
     // using class to load a class
@@ -113,7 +122,9 @@ public class StoreApplication {
         // Calling class with constructor parameterized.
         // B obj = new B(4);
         // Calling class without parameter in constructor.
-        B obj = new B(4);
-
+//        A obj = new A();
+//        obj.show();
+        // anonymous object. -- objects are created in the heap memory.
+        new A();
     }
 }
