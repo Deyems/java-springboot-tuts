@@ -93,15 +93,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //        System.out.println("In B constructor with parameter");
 //    }
 //}
-
-class A {
-    public A(){
-        System.out.println("In A Constructor");
-    }
-    public void show(){
-        System.out.println("In A show method.");
-    }
-}
+//
+//class A {
+//    public A(){
+//        System.out.println("In A Constructor");
+//    }
+//    public void show(){
+//        System.out.println("In A show method.");
+//    }
+//}
 
 @SpringBootApplication
 public class StoreApplication {
@@ -125,7 +125,20 @@ public class StoreApplication {
 //        A obj = new A();
 //        obj.show();
         // anonymous object. -- objects are created in the heap memory.
-        new A().show();
-        new A().show();
+//        new A().show();
+//        new A().show();
+
+//        Calc calculator = new Calc();
+        ScientificCalc advCalculator = new ScientificCalc();
+        int addup = advCalculator.add(4, 5);
+        int remove = advCalculator.sub(8, 3);
+
+        int multiply = advCalculator.multi(5, 3);
+        int divide = advCalculator.div(15, 4);
+        double power = advCalculator.power(15, 4);
+
+        System.out.println(addup + " add " + remove + " removal results");
+        System.out.println(multiply + " multiplication " + divide + " division results");
+        System.out.println(power + " power ");
     }
 }
