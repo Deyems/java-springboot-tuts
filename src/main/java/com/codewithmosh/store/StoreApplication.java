@@ -1,6 +1,6 @@
 package com.codewithmosh.store;
 
-import org.springframework.boot.SpringApplication;
+import com.codewithmosh.store.tools.AdvCalc;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //class Student {
@@ -103,6 +103,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //    }
 //}
 
+
 @SpringBootApplication
 public class StoreApplication {
 
@@ -129,16 +130,19 @@ public class StoreApplication {
 //        new A().show();
 
 //        Calc calculator = new Calc();
-        ScientificCalc advCalculator = new ScientificCalc();
-        int addup = advCalculator.add(4, 5);
-        int remove = advCalculator.sub(8, 3);
-
-        int multiply = advCalculator.multi(5, 3);
-        int divide = advCalculator.div(15, 4);
-        double power = advCalculator.power(15, 4);
-
-        System.out.println(addup + " add " + remove + " removal results");
-        System.out.println(multiply + " multiplication " + divide + " division results");
-        System.out.println(power + " power ");
+//        ScientificCalc advCalculator = new ScientificCalc();
+//        int addup = advCalculator.add(4, 5);
+//        int remove = advCalculator.sub(8, 3);
+//
+//        int multiply = advCalculator.multi(5, 3);
+//        int divide = advCalculator.div(15, 4);
+//        double power = advCalculator.power(15, 4);
+//
+//        System.out.println(addup + " add " + remove + " removal results");
+//        System.out.println(multiply + " multiplication " + divide + " division results");
+//        System.out.println(power + " power ");
+        AdvCalc calculation = new AdvCalc();
+        int resultAdd = calculation.add(4, 5);
+        System.out.println("addition result is " +  resultAdd);
     }
 }
