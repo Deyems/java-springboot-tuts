@@ -103,6 +103,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //    }
 //}
 
+class AParent {
+    public void show() {
+        System.out.println("In A show");
+    }
+}
+
+class Achild extends AParent {
+
+    public void show() {
+        System.out.println("In B show::");
+    }
+}
+
+class AChildTwo extends AParent {
+    public void show() {
+        System.out.println("In C show::");
+    }
+}
 
 @SpringBootApplication
 public class StoreApplication {
@@ -141,8 +159,17 @@ public class StoreApplication {
 //        System.out.println(addup + " add " + remove + " removal results");
 //        System.out.println(multiply + " multiplication " + divide + " division results");
 //        System.out.println(power + " power ");
-        AdvCalc calculation = new AdvCalc();
-        int resultAdd = calculation.add(4, 5);
-        System.out.println("addition result is " +  resultAdd);
+//        AdvCalc calculation = new AdvCalc();
+//        int resultAdd = calculation.add(4, 5);
+//        System.out.println("addition result is " +  resultAdd);
+        AParent obj = new AParent();
+        obj.show();
+
+        obj = new Achild();
+        obj.show();
+
+        obj = new AChildTwo();
+        obj.show();
+
     }
 }
