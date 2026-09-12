@@ -103,24 +103,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //    }
 //}
 
-class AParent {
-    public void show() {
-        System.out.println("In A show");
-    }
-}
-
-class Achild extends AParent {
-
-    public void show() {
-        System.out.println("In B show::");
-    }
-}
-
-class AChildTwo extends AParent {
-    public void show() {
-        System.out.println("In C show::");
-    }
-}
+//class AParent {
+//    public void show() {
+//        System.out.println("In A show");
+//    }
+//}
+//
+//class Achild extends AParent {
+//
+//    public void show() {
+//        System.out.println("In B show::");
+//    }
+//}
+//
+//class AChildTwo extends AParent {
+//    public void show() {
+//        System.out.println("In C show::");
+//    }
+//}
 
 @SpringBootApplication
 public class StoreApplication {
@@ -162,14 +162,18 @@ public class StoreApplication {
 //        AdvCalc calculation = new AdvCalc();
 //        int resultAdd = calculation.add(4, 5);
 //        System.out.println("addition result is " +  resultAdd);
-        AParent obj = new AParent();
-        obj.show();
+//        AParent obj = new AParent();
+//        obj.show();
+//
+//        obj = new Achild();
+//        obj.show();
+//
+//        obj = new AChildTwo();
+//        obj.show();
 
-        obj = new Achild();
-        obj.show();
-
-        obj = new AChildTwo();
-        obj.show();
+        final int num = 8;
+//        num = 9;
+        System.out.println("priting the final int num" + num);
 
     }
 }
