@@ -122,6 +122,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //    }
 //}
 
+class Laptop {
+    String model;
+    int price;
+}
+
 @SpringBootApplication
 public class StoreApplication {
 
@@ -171,9 +176,12 @@ public class StoreApplication {
 //        obj = new AChildTwo();
 //        obj.show();
 
-        final int num = 8;
-//        num = 9;
-        System.out.println("priting the final int num" + num);
-
+//        final int num = 8;
+////        num = 9;
+//        System.out.println("priting the final int num" + num);
+        Laptop obj = new Laptop();
+        obj.model = "Lenovo";
+        obj.price = 1010;
+        System.out.println(obj.toString());
     }
 }
