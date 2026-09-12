@@ -127,7 +127,7 @@ class Laptop {
     int price;
 
     public String toString(){
-        return "Hey";
+        return model + ": " + price;
     }
 }
 
