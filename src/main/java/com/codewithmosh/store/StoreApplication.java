@@ -124,25 +124,37 @@ import java.util.Objects;
 //    }
 //}
 
-class Laptop {
-    String model;
-    int price;
+//class Laptop {
+//    String model;
+//    int price;
+//
+//    public String toString(){
+//        return model + ": " + price;
+//    }
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Laptop laptop = (Laptop) o;
+//        return price == laptop.price && Objects.equals(model, laptop.model);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(model, price);
+//    }
+//}
 
-    public String toString(){
-        return model + ": " + price;
+class A {
+    public void show1(){
+        System.out.println("Inside A show");
     }
+}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Laptop laptop = (Laptop) o;
-        return price == laptop.price && Objects.equals(model, laptop.model);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(model, price);
+class B extends A {
+    public void show2(){
+        System.out.println("Inside B show");
     }
 }
 
@@ -198,16 +210,29 @@ public class StoreApplication {
 //        final int num = 8;
 ////        num = 9;
 //        System.out.println("priting the final int num" + num);
-        Laptop obj1 = new Laptop();
-        obj1.model = "Lenovo";
-        obj1.price = 1010;
+//        Laptop obj1 = new Laptop();
+//        obj1.model = "Lenovo";
+//        obj1.price = 1010;
+//
+//        Laptop obj2 = new Laptop();
+//        obj2.model = "Lenovo";
+//        obj2.price = 1010;
+//
+//        Boolean result = obj1.equals(obj2);
+//        System.out.println(result);
+//        A obj = new A();
+        //upcasting.
+//        A obj = (A) new B();
+//        obj.show1();
 
-        Laptop obj2 = new Laptop();
-        obj2.model = "Lenovo";
-        obj2.price = 1010;
+        //downcasting
+        A obj = new B();
+        obj.show1();
 
-        Boolean result = obj1.equals(obj2);
+        //upcasting.
+        B obj1 = (B) obj;
+        obj1.show2();
 
-        System.out.println(result);
+
     }
 }
