@@ -3,6 +3,8 @@ package com.codewithmosh.store;
 import com.codewithmosh.store.tools.AdvCalc;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Objects;
+
 //class Student {
 //    int rollno;
 //    String name;
@@ -129,6 +131,19 @@ class Laptop {
     public String toString(){
         return model + ": " + price;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Laptop laptop = (Laptop) o;
+        return price == laptop.price && Objects.equals(model, laptop.model);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(model, price);
+    }
 }
 
 @SpringBootApplication
@@ -188,7 +203,7 @@ public class StoreApplication {
         obj1.price = 1010;
 
         Laptop obj2 = new Laptop();
-        obj2.model = "Hewlett Packard";
+        obj2.model = "Lenovo";
         obj2.price = 1010;
 
         Boolean result = obj1.equals(obj2);
