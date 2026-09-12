@@ -125,6 +125,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 class Laptop {
     String model;
     int price;
+
+    public String toString(){
+        return "Hey";
+    }
 }
 
 @SpringBootApplication
