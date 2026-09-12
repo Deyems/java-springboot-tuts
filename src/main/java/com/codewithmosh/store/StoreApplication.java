@@ -183,9 +183,16 @@ public class StoreApplication {
 //        final int num = 8;
 ////        num = 9;
 //        System.out.println("priting the final int num" + num);
-        Laptop obj = new Laptop();
-        obj.model = "Lenovo";
-        obj.price = 1010;
-        System.out.println(obj.toString());
+        Laptop obj1 = new Laptop();
+        obj1.model = "Lenovo";
+        obj1.price = 1010;
+
+        Laptop obj2 = new Laptop();
+        obj2.model = "Hewlett Packard";
+        obj2.price = 1010;
+
+        Boolean result = obj1.equals(obj2);
+
+        System.out.println(result);
     }
 }
