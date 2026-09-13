@@ -146,15 +146,36 @@ import java.util.Objects;
 //    }
 //}
 
-class A {
-    public void show1(){
-        System.out.println("Inside A show");
+//class A {
+//    public void show1(){
+//        System.out.println("Inside A show");
+//    }
+//}
+//
+//class B extends A {
+//    public void show2(){
+//        System.out.println("Inside B show");
+//    }
+//}
+
+abstract class Car {
+    public abstract void drive();
+    public abstract void fly();
+
+    public void playMusic(){
+        System.out.println("This is playing music");
     }
 }
 
-class B extends A {
-    public void show2(){
-        System.out.println("Inside B show");
+class WagonR extends Car {
+    @Override
+    public void drive() {
+        System.out.println("We must drive");
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("Start flying ...");
     }
 }
 
@@ -225,14 +246,17 @@ public class StoreApplication {
 //        A obj = (A) new B();
 //        obj.show1();
 
-        //downcasting
-        A obj = new B();
-        obj.show1();
+//        //downcasting
+//        A obj = new B();
+//        obj.show1();
+//
+//        //upcasting.
+//        B obj1 = (B) obj;
+//        obj1.show2();
 
-        //upcasting.
-        B obj1 = (B) obj;
-        obj1.show2();
-
-
+        Car obj = new WagonR();
+        obj.drive();
+        obj.playMusic();
+        obj.fly();
     }
 }
