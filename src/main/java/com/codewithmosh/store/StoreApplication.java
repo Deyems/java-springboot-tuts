@@ -158,25 +158,44 @@ import java.util.Objects;
 //    }
 //}
 
-abstract class Car {
-    public abstract void drive();
-    public abstract void fly();
+// Abstract class.
+// abstract class Car {
+//    public abstract void drive();
+//    public abstract void fly();
+//
+//    public void playMusic(){
+//        System.out.println("This is playing music");
+//    }
+// }
+//
+//class WagonR extends Car {
+//    @Override
+//    public void drive() {
+//        System.out.println("We must drive");
+//    }
+//
+//    @Override
+//    public void fly() {
+//        System.out.println("Start flying ...");
+//    }
+//}
 
-    public void playMusic(){
-        System.out.println("This is playing music");
-    }
-}
+// InnerClass
+class A {
+    int age;
 
-class WagonR extends Car {
-    @Override
-    public void drive() {
-        System.out.println("We must drive");
+    public void show(){
+        System.out.println("In show mtd");
     }
 
-    @Override
-    public void fly() {
-        System.out.println("Start flying ...");
+    class B {
+
+        public void config(){
+            System.out.println("inner class config mthd");
+        }
+
     }
+
 }
 
 @SpringBootApplication
@@ -254,9 +273,17 @@ public class StoreApplication {
 //        B obj1 = (B) obj;
 //        obj1.show2();
 
-        Car obj = new WagonR();
-        obj.drive();
-        obj.playMusic();
-        obj.fly();
+//        Car obj = new WagonR();
+//        obj.drive();
+//        obj.playMusic();
+//        obj.fly();
+
+        A obj = new A();
+        obj.show();
+
+        //to access the class in A, we now use
+        A.B obj1 = obj.new B();
+        obj1.config();
+//        obj1 is ruling currently - -Tinubu.
     }
 }
