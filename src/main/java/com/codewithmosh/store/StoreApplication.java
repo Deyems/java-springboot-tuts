@@ -196,6 +196,14 @@ class A {
 
     }
 
+    static class C {
+
+        public void config(){
+            System.out.println("inner static class config mthd");
+        }
+
+    }
+
 }
 
 @SpringBootApplication
@@ -285,5 +293,9 @@ public class StoreApplication {
         A.B obj1 = obj.new B();
         obj1.config();
 //        obj1 is ruling currently - -Tinubu.
+
+        //calling the static inner class.
+        A.C obj2 = new A.C();
+        obj2.config();
     }
 }
