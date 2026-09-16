@@ -183,25 +183,20 @@ import java.util.Objects;
 // InnerClass
 class A {
     int age;
-
     public void show(){
         System.out.println("In show mtd");
     }
 
     class B {
-
         public void config(){
             System.out.println("inner class config mthd");
         }
-
     }
 
     static class C {
-
         public void config(){
             System.out.println("inner static class config mthd");
         }
-
     }
 
 }
@@ -286,16 +281,24 @@ public class StoreApplication {
 //        obj.playMusic();
 //        obj.fly();
 
-        A obj = new A();
-        obj.show();
+//        A obj = new A();
+//        obj.show();
 
         //to access the class in A, we now use
-        A.B obj1 = obj.new B();
-        obj1.config();
+//        A.B obj1 = obj.new B();
+//        obj1.config();
 //        obj1 is ruling currently - -Tinubu.
 
         //calling the static inner class.
-        A.C obj2 = new A.C();
-        obj2.config();
+//        A.C obj2 = new A.C();
+//        obj2.config();
+
+        //Anonymous class
+        A anonymousObj = new A(){
+            public void show(){
+                System.out.println("In anonymous new show mtd");
+            }
+        };
+        anonymousObj.show();
     }
 }
