@@ -180,26 +180,32 @@ import java.util.Objects;
 //    }
 //}
 
-// InnerClass
-class A {
-    int age;
-    public void show(){
-        System.out.println("In show mtd");
-    }
+//// InnerClass
+//class A {
+//    int age;
+//    public void show(){
+//        System.out.println("In show mtd");
+//    }
+//
+//    class B {
+//        public void config(){
+//            System.out.println("inner class config mthd");
+//        }
+//    }
+//
+//    static class C {
+//        public void config(){
+//            System.out.println("inner static class config mthd");
+//        }
+//    }
+//
+//}
 
-    class B {
-        public void config(){
-            System.out.println("inner class config mthd");
-        }
-    }
-
-    static class C {
-        public void config(){
-            System.out.println("inner static class config mthd");
-        }
-    }
-
+abstract class A {
+    public abstract void show();
 }
+
+
 
 @SpringBootApplication
 public class StoreApplication {
@@ -294,11 +300,20 @@ public class StoreApplication {
 //        obj2.config();
 
         //Anonymous class
+//        A anonymousObj = new A(){
+//            public void show(){
+//                System.out.println("In anonymous new show mtd");
+//            }
+//        };
+//        anonymousObj.show();
+
+        //Instantiating abstract class using anonymous inner class
         A anonymousObj = new A(){
             public void show(){
                 System.out.println("In anonymous new show mtd");
             }
         };
+
         anonymousObj.show();
     }
 }
