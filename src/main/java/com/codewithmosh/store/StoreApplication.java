@@ -3,6 +3,7 @@ package com.codewithmosh.store;
 import com.codewithmosh.store.tools.AdvCalc;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import javax.swing.*;
 import java.util.Objects;
 
 //class Student {
@@ -203,6 +204,7 @@ import java.util.Objects;
 
 abstract class A {
     public abstract void show();
+
 }
 
 
@@ -308,12 +310,19 @@ public class StoreApplication {
 //        anonymousObj.show();
 
         //Instantiating abstract class using anonymous inner class
-        A anonymousObj = new A(){
-            public void show(){
-                System.out.println("In anonymous new show mtd");
-            }
-        };
+//        A anonymousObj = new A(){
+//            public void show(){
+//                System.out.println("In anonymous new show mtd");
+//            }
+//        };
+//
+//        anonymousObj.show();
 
-        anonymousObj.show();
+        String name = JOptionPane.showInputDialog("What is your name?");
+
+        // create the message
+         String message = String.format("Welcome, %s, to Java Programming!", name);
+        // display the message to welcome the user by name
+         JOptionPane.showMessageDialog(null, message);
     }
 }
