@@ -202,12 +202,44 @@ import java.util.Objects;
 //
 //}
 
-abstract class A {
-    public abstract void show();
+//abstract class A {
+//    public abstract void show();
+//
+//}
+
+interface A {
+    // variables are final, static
+    int age = 44;
+    String area = "Mumbai";
+    void show();
+    void config();
+}
+
+interface X {
+    void run();
+}
+
+interface Y extends X{
 
 }
 
+class B implements A, Y {
 
+    @Override
+    public void show() {
+        System.out.println("In show.....");
+    }
+
+    @Override
+    public void config() {
+        System.out.println("In config...");
+    }
+
+    @Override
+    public void run() {
+        System.out.println("method from another interface implemented");
+    }
+}
 
 @SpringBootApplication
 public class StoreApplication {
@@ -318,11 +350,22 @@ public class StoreApplication {
 //
 //        anonymousObj.show();
 
-        String name = JOptionPane.showInputDialog("What is your name?");
 
-        // create the message
-         String message = String.format("Welcome, %s, to Java Programming!", name);
-        // display the message to welcome the user by name
-         JOptionPane.showMessageDialog(null, message);
+        //JOptionPane to create textbox.
+//        String name = JOptionPane.showInputDialog("What is your name?");
+//
+//        // create the message
+//         String message = String.format("Welcome, %s, to Java Programming!", name);
+//        // display the message to welcome the user by name
+//         JOptionPane.showMessageDialog(null, message);
+        A obj;
+        B b = new B();
+        b.show();
+        b.config();
+        b.run();
+//        this below is how we intend to re-assign area but the compiler complains that you
+//                cant re-assign final variable.
+        // A.area = "This life";
+        System.out.println(A.area + " : testing using interface variables - static");
     }
 }
