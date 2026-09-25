@@ -241,17 +241,17 @@ class B implements A, Y {
     }
 }
 
-abstract class Computer {
+interface Computer {
     public abstract void code();
 }
 
-class Laptop extends Computer{
+class Laptop implements Computer{
     public void code(){
         System.out.println("code, compile run");
     }
 }
 
-class Desktop extends Computer {
+class Desktop implements Computer {
     public void code(){
         System.out.println("code, compile run in desktop is faster");
     }
