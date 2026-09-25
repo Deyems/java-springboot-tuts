@@ -241,6 +241,29 @@ class B implements A, Y {
     }
 }
 
+abstract class Computer {
+    public abstract void code();
+}
+
+class Laptop extends Computer{
+    public void code(){
+        System.out.println("code, compile run");
+    }
+}
+
+class Desktop extends Computer {
+    public void code(){
+        System.out.println("code, compile run in desktop is faster");
+    }
+}
+
+class Developer {
+    public void devApp(Computer lap){
+        lap.code();
+//        System.out.println("coding...");
+    }
+}
+
 @SpringBootApplication
 public class StoreApplication {
 
@@ -358,14 +381,20 @@ public class StoreApplication {
 //         String message = String.format("Welcome, %s, to Java Programming!", name);
 //        // display the message to welcome the user by name
 //         JOptionPane.showMessageDialog(null, message);
-        A obj;
-        B b = new B();
-        b.show();
-        b.config();
-        b.run();
+//        A obj;
+//        B b = new B();
+//        b.show();
+//        b.config();
+//        b.run();
 //        this below is how we intend to re-assign area but the compiler complains that you
 //                cant re-assign final variable.
         // A.area = "This life";
         System.out.println(A.area + " : testing using interface variables - static");
+        Computer laptopNeeded = new Laptop();
+        Computer desktopNeeded = new Desktop();
+
+        Developer dev_navin = new Developer();
+        dev_navin.devApp(desktopNeeded);
+
     }
 }
