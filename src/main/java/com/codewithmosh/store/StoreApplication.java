@@ -3,26 +3,33 @@ package com.codewithmosh.store;
 import com.codewithmosh.store.tools.AdvCalc;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-class A {
-    public void showTheDataWhichBelongsToThisClass(){
-        System.out.println("In A show");
-    }
+interface A {
+    void show();
 }
 
 
-class B extends A {
-    @Override
-    public void showTheDataWhichBelongsToThisClass(){
-        System.out.println("In B show");
-    }
-}
+//class B implements A {
+//    public void show(){
+//        System.out.println("In B show");
+//    }
+//}
 
 //@SpringBootApplication
 public class StoreApplication {
 
     public static void main(String[] args) {
        //Annotations.
-        B obj = new B();
-        obj.showTheDataWhichBelongsToThisClass();
+        A obj = new A(){
+            @Override
+            public void show() {
+                System.out.println("implementing interface directly....");
+            }
+        };
+
+        obj.show();
+
+        A obj_2 = () -> {
+            System.out.println("implementing interface using lambda....");
+        };
     }
 }
