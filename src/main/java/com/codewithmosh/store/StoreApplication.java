@@ -3,8 +3,9 @@ package com.codewithmosh.store;
 import com.codewithmosh.store.tools.AdvCalc;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@FunctionalInterface
 interface A {
-    void show();
+    void show(int i);
 }
 
 
@@ -19,17 +20,24 @@ public class StoreApplication {
 
     public static void main(String[] args) {
        //Annotations.
-        A obj = new A(){
-            @Override
-            public void show() {
-                System.out.println("implementing interface directly....");
-            }
+//        A obj = new A(){
+//            @Override
+//            public void show() {
+//                System.out.println("implementing interface directly....");
+//            }
+//        };
+
+//        obj.show();
+
+//        A obj_2 = () -> {
+//            System.out.println("implementing interface using lambda....");
+//        };
+
+        A obj_3 = (i) -> {
+            System.out.println("Passing argument to a lambda expression " + i);
         };
 
-        obj.show();
+        obj_3.show(45);
 
-        A obj_2 = () -> {
-            System.out.println("implementing interface using lambda....");
-        };
     }
 }
