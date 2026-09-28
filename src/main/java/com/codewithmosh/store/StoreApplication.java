@@ -1,43 +1,27 @@
 package com.codewithmosh.store;
 
-import com.codewithmosh.store.tools.AdvCalc;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@FunctionalInterface
-interface A {
-    void show(int i);
-}
-
-
-//class B implements A {
-//    public void show(){
-//        System.out.println("In B show");
-//    }
-//}
 
 //@SpringBootApplication
 public class StoreApplication {
 
     public static void main(String[] args) {
-       //Annotations.
-//        A obj = new A(){
-//            @Override
-//            public void show() {
-//                System.out.println("implementing interface directly....");
-//            }
-//        };
 
-//        obj.show();
+        //Exceptions!
+        int i = 45;
+        int j = 3;
+        int nums[] = new int[5];
 
-//        A obj_2 = () -> {
-//            System.out.println("implementing interface using lambda....");
-//        };
-
-        A obj_3 = (i) -> {
-            System.out.println("Passing argument to a lambda expression " + i);
-        };
-
-        obj_3.show(45);
+        try {
+            int output = i / j;
+            System.out.println("array value at position One " + nums[1]);
+            System.out.println("array value at position five " + nums[5]);
+            System.out.println("The result of the division" + output);
+        }catch (Exception e){
+//            System.out.println();
+            System.out.println("Execution could have stopped here due to this error \"" + e.getMessage() + "\"");
+        }
+        System.out.println("Execution continues.");
 
     }
 }
