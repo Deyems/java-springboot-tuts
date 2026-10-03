@@ -19,5 +19,6 @@ public class StoreApplication {
         int num = Integer.parseInt(bfNumber.readLine());
 
         System.out.println("You entered: " + (num));
+        bfNumber.close();
     }
 }
