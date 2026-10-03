@@ -3,28 +3,21 @@ package com.codewithmosh.store;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-class A {
-    public void show() {
-
-            Class.forName("StoreApplication");
-//        try {
-//        }catch(ClassNotFoundException e){
-//            System.out.println("Not able to find the class Error occurred" + e);
-//        }
-    }
-}
 
 @SpringBootApplication
 public class StoreApplication {
 
-    static {
-        System.out.println("Class Loaded!");
-    }
+    public static void main(String[] args) throws IOException {
+        System.out.println("Enter a Number: ");
 
-    public static void main(String[] args) throws ClassNotFoundException{
-        A obj = new A();
-        System.out.println("Inside Store Application Class.");
-        obj.show();
+        InputStreamReader reader = new InputStreamReader(System.in);
+        BufferedReader bfNumber = new BufferedReader(reader);
+        int num = Integer.parseInt(bfNumber.readLine());
+
+        System.out.println("You entered: " + (num));
     }
 }
