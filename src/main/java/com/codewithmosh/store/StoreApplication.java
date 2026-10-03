@@ -13,11 +13,12 @@ import java.util.Scanner;
 public class StoreApplication {
 
     public static void main(String[] args) throws IOException {
-        System.out.println("Enter a Number: ");
+        int num = 0;
 
-        Scanner reader = new Scanner(System.in);
-        int num = reader.nextInt();
-        System.out.println("You entered: " + (num));
-        reader.close();
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            System.out.println("Enter a Number: ");
+            num = Integer.parseInt(br.readLine());
+            System.out.println("Number entered is " + num);
+        }
     }
 }
