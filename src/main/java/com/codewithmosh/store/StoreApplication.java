@@ -3,22 +3,32 @@ package com.codewithmosh.store;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Scanner;
 
+class A{
+    public void show(){
+        for(int i = 0; i < 10; i++) {
+            System.out.println("Show in A");
+        }
+    }
+}
+
+class B{
+    public void show(){
+        for(int i = 0; i < 10; i++) {
+            System.out.println("Show in B");
+        }
+    }
+}
 
 @SpringBootApplication
 public class StoreApplication {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         int num = 0;
-
-        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-            System.out.println("Enter a Number: ");
-            num = Integer.parseInt(br.readLine());
-            System.out.println("Number entered is " + num);
-        }
+        A objA = new A();
+        B objB = new B();
+        objA.show();
+        objB.show();
     }
 }
