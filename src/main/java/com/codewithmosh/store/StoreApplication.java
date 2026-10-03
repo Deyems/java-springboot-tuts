@@ -1,46 +1,30 @@
 package com.codewithmosh.store;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-class NavinException extends Exception{
-    public NavinException(String message){
-        super(message);
+
+class A {
+    public void show() {
+
+            Class.forName("StoreApplication");
+//        try {
+//        }catch(ClassNotFoundException e){
+//            System.out.println("Not able to find the class Error occurred" + e);
+//        }
     }
 }
 
-//@SpringBootApplication
+@SpringBootApplication
 public class StoreApplication {
 
-    public static void main(String[] args) {
+    static {
+        System.out.println("Class Loaded!");
+    }
 
-        //Exceptions!
-        int i = 45;
-        int j = 0;
-        int nums[] = new int[5];
-        String str = null;
-
-        try {
-//            if(j == 0) throw new ArithmeticException("You can't perform that operation");
-            if(j == 0) throw new NavinException("You can't perform that operation");
-            int output = i / j;
-
-
-            System.out.println("The length of the string is given as "+ str.length());
-            System.out.println("array value at position One " + nums[1]);
-            System.out.println("array value at position five " + nums[5]);
-            System.out.println("The result of the division" + output);
-        }catch (NavinException e){
-            System.out.println("custom exception caught. \"" + e + "\"");
-        }
-        catch (ArithmeticException e){
-            System.out.println("Arithmetic exception caught. \"" + e.getMessage() + "\"");
-        }catch(IndexOutOfBoundsException e){
-            System.out.println("Catch Index Out of bound exception \"" + e.getMessage() + "\"");
-        }
-        catch (Exception e){
-            System.out.println("Catch other exceptions not handled error \"" + e + "\"");
-        }
-        System.out.println("Execution continues.");
-
+    public static void main(String[] args) throws ClassNotFoundException{
+        A obj = new A();
+        System.out.println("Inside Store Application Class.");
+        obj.show();
     }
 }
