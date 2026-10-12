@@ -1,31 +1,27 @@
 package com.codewithmosh.store;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.*;
 
+class Student implements Comparable<Student> {
+    int age;
+    String name;
 
-class A implements Runnable{
-    public void run(){
-        for(int i = 0; i < 5; i++) {
-            System.out.println("Show in A");
-            try {
-                Thread.sleep(10);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+    public Student(int age, String name){
+        this.age = age;
+        this.name = name;
     }
-}
 
-class B implements Runnable{
-    public void run(){
-        for(int i = 0; i < 5; i++) {
-            System.out.println("Show in B");
-            try {
-                Thread.sleep(10);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+
+    @Override
+    public String toString() {
+        return "Student{" + "age=" + age + ", name='" + name + '\'' + '}';
+    }
+
+    @Override
+    public int compareTo(Student that) {
+        if(this.age > that.age) return 1;
+        return -1;
     }
 }
 
@@ -33,21 +29,28 @@ class B implements Runnable{
 public class StoreApplication {
 
     public static void main(String[] args) {
-        int num = 0;
-        Runnable objA = new A();
-        Runnable objB = new B();
-        // To get the priority of the thread.
-        // System.out.println(objA.getPriority() + "priority of Thread A");
+        //define the comparator for sorting students.
+        Comparator<Student> sortFactor = new Comparator<Student>() {
+            public int compare (Student s1, Student s2){
+                if (s1.name.length() > s2.name.length()) return 1;
+                return -1;
+            }
+        };
 
-        //you can alter the priority of a thread by using its setPriority method
-//        objA.setPriority(Thread.MAX_PRIORITY);
+        List<Student> students = new ArrayList<Student>();
+        students.add(new Student(17, "tadebee"));
+        students.add(new Student(27, "ade"));
+        students.add(new Student(14, "sade vowe"));
+        students.add(new Student(21, "bade folawiyo"));
 
-        // When the classes are Runnable, we have to create Thread objects that we then pass the
-        // runnable instances.
-        Thread t1 = new Thread(objA);
-        Thread t2 = new Thread(objB);
+        //students becomes sorted because the Student class implements Comparable and uses the compareTo method.
+        Collections.sort(students);
 
-        t1.start();
-        t2.start();
+        System.out.println(students + "raw form");
+
+        for(Student s : students){
+            System.out.println("Iterating through Student with name: " + s.name + " and age: " + s.age);
+        }
+
     }
 }
