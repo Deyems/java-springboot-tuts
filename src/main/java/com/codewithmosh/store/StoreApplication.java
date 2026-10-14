@@ -2,8 +2,6 @@ package com.codewithmosh.store;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.*;
-import java.util.function.Consumer;
-import java.util.stream.Stream;
 
 
 //@SpringBootApplication
